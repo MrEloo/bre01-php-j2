@@ -1,0 +1,28 @@
+<form action="index.php" method="POST">
+    <label for="number1">Nombre 1</label>
+    <input type="number" name="number1">
+    <label for="number2">Nombre 2</label>
+    <input type="number" name="number2">
+    <select name="choix" id="choix">
+        <option value="multiplication">multiplication</option>
+        <option value="division">division</option>
+        <option value="addition">addition</option>
+        <option value="soustraction">soustraction</option>
+        <option value="modulo">modulo</option>
+    </select>
+    <button type="submit">calculer</button>
+</form>
+<article>
+    <h1>Resultat de votre opération :</h1>
+    <?php if ($choix === "addition") : ?>
+        <p><?= add($number1, $number2); ?></p>
+    <?php elseif ($choix === "soustraction") : ?>
+        <p><?= substract($number1, $number2); ?></p>
+    <?php elseif ($choix === "multiplication") : ?>
+        <p><?= multiply($number1, $number2); ?></p>
+    <?php elseif ($choix === "division") : ?>
+        <p><?= divide($number1, $number2); ?></p>
+    <?php elseif ($choix === "modulo") : ?>
+        <p><?= modulo($number1, $number2); ?></p>
+    <?php endif ?>
+</article>
